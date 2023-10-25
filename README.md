@@ -1,4 +1,30 @@
 # Exam Solutions
+**Quick Install Commands**
+```bash
+composer install
+
+npm install && npm run dev
+
+cp .env.example .env
+
+php artisan key:gen
+```
+- I used sqlite db here for quick setup
+```bash
+touch database/database.sqlite
+```
+
+.env :
+```env
+DB_CONNECTION=sqlite
+```
+
+then :
+```bash
+php artisan migrate:refresh --seed
+
+php artisan csv:process
+```
 
 **Notes**:
 - other solutions can be found in `other_solutions` folder
