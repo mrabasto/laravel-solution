@@ -33,7 +33,7 @@ class ProcessCsvFile extends Command
         $csv = 'source.csv';
         if (Storage::disk($storage)->exists($csv)) {
             $fileContents = Storage::disk($storage)->get($csv);
-            $lines = explode(PHP_EOL, $fileContents);
+            $lines = explode("\n", $fileContents);
             $column = explode(',', array_shift($lines));
             array_pop($lines);
             $column[0] = str_replace("\u{FEFF}", '', $column[0]);
